@@ -4,17 +4,19 @@ class App < Sinatra::Base
   # Write your code here!
 
   get '/reversename/:name' do
-    
+
   end
 
 
   get '/square/:number' do
-    
+
   end
 
 
   get '/say/:number/:phrase' do
-    
+    @number = params[:number]
+    @phrase = params[:phrase]
+    "#{@phrase} " * @number
   end
 
 
@@ -32,7 +34,7 @@ class App < Sinatra::Base
     @operation = params[:operation]
     @number1 = params[:number1].to_i
     @number2 = params[:number2].to_i
-    
+
     case @operation
     when "add"
       @result = @number1 + @number2
